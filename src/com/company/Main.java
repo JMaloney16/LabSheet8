@@ -18,11 +18,11 @@ class Chessboard{
     }
 
     public String getBoard(char col, int row) {
-        return this.board[getColumn(col)][row-1];
+        return this.board[getColumnSimple(col)][row-1];
     }
 
     public void setBoard(char col, int row, String value) {
-        this.board[getColumn(col)][row-1] = value;
+        this.board[getColumnSimple(col)][row-1] = value;
     }
 
     private int getColumn(char col){
@@ -53,6 +53,11 @@ class Chessboard{
                 column = 7;
                 break;
         }
+        return column;
+    }
+
+    public int getColumnSimple(char col){
+        int column = ((int)col - 97);
         return column;
     }
 }
